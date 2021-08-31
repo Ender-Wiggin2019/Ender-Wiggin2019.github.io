@@ -41,13 +41,13 @@
 			function func(){
 				var flag = false;
 				$.getJSON('summary.json', function(data) {
-					var id = document.getElementById("logname").value;
+					var id = (document.getElementById("logname").value).toLowerCase();
 					console.log(flag);
 					console.log(id);
 					$.each(data, function(key, val) {
 						if (key == id) {
 							flag = true;
-							window.location.href="report.html?id="+document.getElementById("logname").value;
+							window.location.href="report.html?id="+id;
 						}
 					});
 					if (!flag) $('.text-error-phe').html('无法匹配用户名<br></br>如有问题可以与Ender联系<br></br>（QQ: 209926937）');
